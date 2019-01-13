@@ -27,9 +27,10 @@ class Ball
     y = tempY;
     upSpeed = tempUpSpeed;
     explodeHight = tempExplodeHight;
-    explodeSize = random(90, 370);
+    explodeSize = random(90, 370);  //広がる大きさは玉ごとにバラバラで指定
   }
   
+  //自身のライフサイクルに合わせて動く
   void move()
   {
     if (!(exploding))
@@ -59,6 +60,7 @@ class Ball
     if (diam > explodeSize && !(end)){fade = true;}
   }
   
+  //自分自身を画面に表示する
   void display()
   {
     noStroke();
