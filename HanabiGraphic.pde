@@ -2,7 +2,6 @@ int numOfBalls = 80;
 Ball[] b = new Ball[numOfBalls];
 float yPositionOfFirstBall = 550;
 
-//はじめに一回だけ呼ばれるsetup()関数
 void setup()
 {
   size(800, 500);
@@ -18,7 +17,6 @@ void setup()
   }
 }
 
-//デフォルトで1秒に60回呼び出されるdraw()関数
 void draw()
 {
   background(0, 0, 80);  //空は深い青色を指定
