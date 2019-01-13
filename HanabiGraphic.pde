@@ -11,7 +11,7 @@ void setup()
   //指定の数だけ花火の玉のインスタンスを生成する
   for (int i = 0; i < numOfBalls; i++)
   {
-    //引数で (x座標、y座標、上がるスピード、爆発する高さ) を指定
+    //引数で (x座標、y座標、上昇スピード、爆発する高さ) を指定
     b[i] = new Ball(random(50, 750), yPositionOfFirstBall + timeLag, random(2,4), random(50, 230));
     timeLag += random(100, 200);  //次のボールと100~200の間隔を取る
   }

@@ -35,9 +35,8 @@ class Ball
   {
     if (!(exploding))
     {
-      //爆発前であれば左右に揺れながら一定のスピードで上昇
-      x += random(-swingSpeed, swingSpeed);
-      y -= upSpeed;
+      //爆発前であれば上昇
+      goUp();
     }
     else
     {
@@ -65,6 +64,13 @@ class Ball
     if (fade){fill(red, green, blue, 180 - (fadeCount * 4.5)); fadeCount++;}  //フェード中はfadeCount * 4.5 の分だけ薄くなっていく
     if (fade && fadeCount > 40){fade = false; end = true;}                    // 40回 (= 2/3秒)フェードを続けたら完全に消える
     if (!(end)){ellipse(x, y, diam, diam);} //玉を表示する
+  }
+  
+  private void goUp() {
+      
+     //左右に揺れながら一定のスピードで上昇
+      x += random(-swingSpeed, swingSpeed);
+      y -= upSpeed;
   }
   
   private void getColor() {
