@@ -1,12 +1,12 @@
 class Ball
 {
-  float x;                       //玉のｘ座標
-  float y;                       //玉のｙ座標
-  float diam = 25;      //玉の直径
-  float upSpeed;
-  float swingSpeed = 2.7;        //上昇中に左右に揺れる幅
-  float explodeHight;                 //爆発を開始する高さ
-  float explodeSize;                   //爆発して広がった時の大きさ
+  float x;                //玉のｘ座標
+  float y;                //玉のｙ座標
+  float diam = 25;        //玉の直径
+  float upSpeed;          //上昇スピード
+  float swingSpeed = 2.7; //上昇中に左右に揺れる幅
+  float explodeHight;     //爆発を開始する高さ
+  float explodeSize;      //爆発して広がった時の大きさ
   
   //爆発時における色の強さを保持する変数
   float red;
@@ -63,9 +63,9 @@ class Ball
   {
     noStroke();
     fill(255);  //爆発中でなければ「白」の玉でキープしておく
-    if (exploding){fill(red, green, blue, 180);}                                                          //爆発中は透明度180で指定（0が完全に透明）
+    if (exploding){fill(red, green, blue, 180);}                              //爆発中は透明度180で指定（0が完全に透明）
     if (fade){fill(red, green, blue, 180 - (fadeCount * 4.5)); fadeCount++;}  //フェード中はfadeCount * 4.5 の分だけ薄くなっていく
-    if (fade && fadeCount > 40){fade = false; end = true;}                                 // 40回 (= 2/3秒)フェードを続けたら完全に消える
+    if (fade && fadeCount > 40){fade = false; end = true;}                    // 40回 (= 2/3秒)フェードを続けたら完全に消える
     if (!(end)){ellipse(x, y, diam, diam);} //玉を表示する
   }
 }
