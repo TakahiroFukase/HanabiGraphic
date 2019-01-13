@@ -48,11 +48,7 @@ class Ball
     //爆発する高さに達した時に1回だけ実行される
     if (!(exploding) && y < explodeHight)
     {      
-      //玉の色をランダムに決定
-      red = random(255); 
-      green = random(255);
-      blue = random(255);   
-      
+      getColor();
       exploding = true;
     }
     
@@ -69,5 +65,13 @@ class Ball
     if (fade){fill(red, green, blue, 180 - (fadeCount * 4.5)); fadeCount++;}  //フェード中はfadeCount * 4.5 の分だけ薄くなっていく
     if (fade && fadeCount > 40){fade = false; end = true;}                    // 40回 (= 2/3秒)フェードを続けたら完全に消える
     if (!(end)){ellipse(x, y, diam, diam);} //玉を表示する
+  }
+  
+  private void getColor() {
+      
+       //玉の色をランダムに決定
+      red = random(255); 
+      green = random(255);
+      blue = random(255);   
   }
 }
