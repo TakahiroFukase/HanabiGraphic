@@ -61,7 +61,7 @@ class Ball
   {
     noStroke();
     fill(255);  //爆発中でなければ「白」の玉でキープしておく
-    if (exploding){fill(red, green, blue, 180);}                              //爆発中は透明度180で指定（0が完全に透明）
+    if (exploding){fill(red, green, blue, 180);}                              //爆発中は透明度180で指定（0 : 透明  255: 不透明）
     if (fade){fill(red, green, blue, 180 - (fadeCount * 4.5)); fadeCount++;}  //フェード中はfadeCount * 4.5 の分だけ薄くなっていく
     if (fade && fadeCount > 40){fade = false; end = true;}                    // 40回 (= 2/3秒)フェードを続けたら完全に消える
     if (!(end)){ellipse(x, y, diam, diam);} //玉を表示する
@@ -69,7 +69,7 @@ class Ball
   
   private void getColor() {
       
-       //玉の色をランダムに決定
+      //玉の色をランダムに決定
       red = random(255); 
       green = random(255);
       blue = random(255);   
